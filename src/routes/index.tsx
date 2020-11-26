@@ -13,17 +13,13 @@ import {LoginView} from 'views';
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
-  const Home = () => {
-    return (
-      <UI.SafeAreaView>
-        <UI.Text>HOME</UI.Text>
-      </UI.SafeAreaView>
-    );
-  };
-
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ListTasks">
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName="ListTasks">
         <Stack.Screen name="ListTasks" component={LoginView} />
       </Stack.Navigator>
     </NavigationContainer>

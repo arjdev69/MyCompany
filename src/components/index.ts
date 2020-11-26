@@ -6,15 +6,11 @@ export {
   Loading,
   ButtonCustom,
   ImageLoad,
+  Background,
 } from 'components/@atoms';
 
-export {
-  ModalComp,
-  NotFound,
-} from 'components/@molecules';
+export {ModalComp, NotFound} from 'components/@molecules';
 
-export {
-  LoginForm,
-} from 'components/@organisms';
+export {LoginForm} from 'components/@organisms';
 
 //export {default as Admob} from './Admob';

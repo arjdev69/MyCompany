@@ -1,11 +1,19 @@
 import React from 'react';
 
-import {NotFound} from 'components';
+import {Background, Label} from 'components';
 
 const LoginForm: React.FC = () => {
-  return(
-    <NotFound message="LOGIN FORM" />
+  return (
+    <Background>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+      <Label>ADADFDFGSFSDFF</Label>
+    </Background>
   );
-}
+};
 
 export default LoginForm;
