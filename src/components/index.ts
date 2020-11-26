@@ -9,7 +9,7 @@ export {
   Background,
 } from 'components/@atoms';
 
-export {ModalComp, NotFound} from 'components/@molecules';
+export {ModalComp, NotFound, BoxForm, BoxLogo} from 'components/@molecules';
 
 export {LoginForm} from 'components/@organisms';
 

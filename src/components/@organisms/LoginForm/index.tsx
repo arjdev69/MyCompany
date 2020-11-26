@@ -1,18 +1,15 @@
 import React from 'react';
 
-import {Background, Label} from 'components';
+import {Container} from './styles';
+
+import {BoxLogo, BoxForm} from 'components';
 
 const LoginForm: React.FC = () => {
   return (
-    <Background>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-      <Label>ADADFDFGSFSDFF</Label>
-    </Background>
+    <Container>
+      <BoxLogo />
+      <BoxForm />
+    </Container>
   );
 };
 
