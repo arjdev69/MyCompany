@@ -15,13 +15,21 @@
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "axios": "^0.21.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "immer": "^8.0.0",
+    "polished": "^4.0.5",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-reanimated": "^1.13.2",
+    "react-native-responsive-screen": "^1.4.1",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.15.0",
+    "react-native-vector-icons": "^7.1.0",
     "react-redux": "^7.2.2",
     "reactotron-react-native": "^5.0.0",
     "reactotron-redux": "^3.1.3",
@@ -59,5 +67,19 @@
       "json",
       "node"
     ]
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@assets": "./src/assets",
+    "@atoms": "./src/components/@atoms",
+    "@molecules": "./src/components/@molecules",
+    "@organisms": "./src/components/@organisms",
+    "@templates": "./src/components/templates",
+    "@components": "./src/components",
+    "@routes": "./src/routes",
+    "@views": "./src/views",
+    "@services": "./src/services",
+    "@styles": "./src/styles",
+    "@utils": "./src/utils"
   }
 }
