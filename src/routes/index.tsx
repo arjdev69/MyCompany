@@ -6,7 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
-//import {Home, Products, Services} from 'views';
+import {LoginView} from 'views';
 
 //import {COLORS, SIZES, HP} from 'styles';
 
@@ -15,16 +15,16 @@ const Stack = createStackNavigator();
 const Routes: React.FC = () => {
   const Home = () => {
     return (
-      <UI.View>
+      <UI.SafeAreaView>
         <UI.Text>HOME</UI.Text>
-      </UI.View>
+      </UI.SafeAreaView>
     );
   };
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="ListTasks">
-        <Stack.Screen name="ListTasks" component={Home} />
+        <Stack.Screen name="ListTasks" component={LoginView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

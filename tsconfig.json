@@ -43,7 +43,7 @@
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
     "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
-    "esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "esModuleInterop": true,                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
     // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
 
     /* Source Map Options */
@@ -55,6 +55,61 @@
     /* Experimental Options */
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "*": [
+        "./src/*"
+      ],
+      "@assets": [
+        "./src/assets/*"
+      ],
+      "@atoms": [
+        "src/components/@atoms/*"
+      ],
+      "@molecules": [
+        "src/components/@molecules/*"
+      ],
+      "@organisms": [
+        "src/components/@organisms/*"
+      ],
+      "@routes": [
+        "./src/routes/*"
+      ],
+      "@views": [
+        "./src/views/*"
+      ],
+      "@templates": [
+        "./src/components/templates/*"
+      ],
+      "@components": [
+        "./src/components/*"
+      ],
+      "@services": [
+        "./src/services/*"
+      ],
+      "@styles": [
+        "./src/styles/*"
+      ],
+      "@utils": [
+        "./src/utils/*"
+      ],
+      "tests": [
+        "tests/*"
+      ],
+      "underscore": ["lodash"]
+    },
   },
   "exclude": [
     "node_modules", "babel.config.js", "metro.config.js", "jest.config.js"
