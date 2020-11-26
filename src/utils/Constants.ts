@@ -3,5 +3,5 @@ export const screenLabel = {
 };
 
 export const URL = {
-  main: 'https://my-json-server.typicode.com/arjdev69/jsonserver/',
+  main: 'https://empresas.ioasys.com.br/api/v1/',
 };

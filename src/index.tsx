@@ -11,13 +11,13 @@ import 'react-native-gesture-handler';
 import {store, persistor} from './store';
 
 import App from './routes';
-//import {COLORS} from 'styles';
+import {COLORS} from 'styles';
 
 const Src: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <StatusBar backgroundColor={'#CCE'} barStyle={'default'} />
+        <StatusBar backgroundColor={COLORS.primary} barStyle={'default'} />
         <App />
       </PersistGate>
     </Provider>
