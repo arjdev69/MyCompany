@@ -1,12 +1,14 @@
 import React from 'react';
-
-import {LoginForm} from 'components';
 import * as UI from 'react-native';
+
+import {LoginForm, Background} from 'components';
 
 const Login: React.FC = () => {
   return (
     <UI.View style={{height: '100%', width: '100%'}}>
-      <LoginForm />
+      <Background>
+        <LoginForm />
+      </Background>
     </UI.View>
   );
 };
