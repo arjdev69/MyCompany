@@ -10,13 +10,13 @@ export interface Props {
   activeOpacity: number;
 }
 
-const ButtonCustom: React.FC<Props> = (_props) => {
+const ButtonCustom: React.FC<Props> = _props => {
   return (
     <UI.TouchableOpacity
       {..._props}
       style={_props.style}
       onPress={_props.onPress}
-      disabled={_props.loading}>
+      disabled={_props.loading || _props.disabled}>
       {_props.loading ? (
         <UI.ActivityIndicator size="small" color="#FFF" />
       ) : (
