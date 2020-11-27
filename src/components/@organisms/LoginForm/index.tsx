@@ -4,11 +4,15 @@ import {Container} from './styles';
 
 import {BoxLogo, BoxForm} from 'components';
 
-const LoginForm: React.FC = () => {
+export interface Props {
+  requestLogin: any;
+}
+
+const LoginForm: React.FC<Props> = _props => {
   return (
     <Container>
       <BoxLogo />
-      <BoxForm />
+      <BoxForm requestLogin={_props.requestLogin} />
     </Container>
   );
 };

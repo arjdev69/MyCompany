@@ -2,7 +2,11 @@ import React from 'react';
 
 import {Box, Input, ButtonCustom, Label} from 'components';
 
-const BoxForm: React.FC = () => {
+export interface Props {
+  requestLogin: any;
+}
+
+const BoxForm: React.FC<Props> = _props => {
   return (
     <Box>
       <Input
@@ -31,7 +35,7 @@ const BoxForm: React.FC = () => {
         loading={false}
         activeOpacity={0.6}
         onPress={() => {
-          console.log('1');
+          _props.requestLogin('testeapple@ioasys.com.br', '12341234');
         }}
         style={{}}>
         <Label style={{}}>LABEL</Label>

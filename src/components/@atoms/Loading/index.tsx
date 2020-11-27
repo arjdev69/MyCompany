@@ -8,7 +8,7 @@ export interface Props {
   styles: {};
 }
 
-const Loading: React.FC<Props> = (_props) => {
+const Loading: React.FC<Props> = _props => {
   return (
     <UI.View style={_props.styles}>
       <UI.ActivityIndicator {..._props} />

@@ -38,7 +38,7 @@ export const COLORS = {
   nextColor: '#52284f',
 
   /*----*/
-  transparentLoadColor: '#000000b8',
+  transparentLoadColor: '#0000004f',
   transparentLightColor: '#FFF5',
   transparentDarkColor: '#0005',
 };
