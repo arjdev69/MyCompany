@@ -1,5 +1,7 @@
 import React, {useRef, useState} from 'react';
 
+import {isValidEmail} from 'utils';
+
 import {Box, Input} from 'components';
 
 import {styles, Form, Button, Text} from './styles';
@@ -16,17 +18,23 @@ const BoxForm: React.FC<Props> = _props => {
   const [password, setPassword] = useState('');
 
   const sendInfoServer = () => {
-    if (email === '') {
+    if (email === '' || !isValidEmail(email)) {
       setEmailError(true);
-    }
-    if (password === '') {
-      setPasswordError(true);
+
+      setTimeout(() => {
+        setEmailError(false);
+      }, 1000);
+      return;
     }
 
-    setTimeout(() => {
-      setEmailError(false);
-      setPasswordError(false);
-    }, 1000);
+    if (password === '') {
+      setPasswordError(true);
+
+      setTimeout(() => {
+        setPasswordError(false);
+      }, 1000);
+      return;
+    }
 
     if (email && password) {
       _props.requestLogin(email, password);
@@ -57,7 +65,7 @@ const BoxForm: React.FC<Props> = _props => {
         <Input
           icon="lock-outline"
           color={passwordError ? COLORS.errorColor : COLORS.lightColor}
-          styleBox={[styles.boxInput, emailError && styles.error]}
+          styleBox={[styles.boxInput, passwordError && styles.error]}
           style={[styles.input, passwordError && styles.error]}
           placeholderTextColor={
             passwordError ? COLORS.errorColor : COLORS.lightColor

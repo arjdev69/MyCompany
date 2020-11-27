@@ -16,7 +16,7 @@ export const removeItem = async (number: any) => {
   try {
     const items = await AsyncStorage.getItem('list');
     let postsFav = JSON.parse(items);
-    const postsItems = postsFav.filter(function (e: {number: any}) {
+    const postsItems = postsFav.filter(function(e: {number: any}) {
       return e.number !== number;
     });
 
@@ -29,13 +29,20 @@ export const removeItem = async (number: any) => {
 
 export const asyncFetch = async (_url: RequestInfo) => {
   fetch(_url)
-    .then((response) => response.json())
-    .then((jsonData) => {
+    .then(response => response.json())
+    .then(jsonData => {
       return jsonData;
     })
-    .catch((error) => {
+    .catch(error => {
       console.error(error);
     });
+};
+
+export const isValidEmail = (email: string) => {
+  const emailRegex = RegExp(
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+  );
+  return emailRegex.test(email);
 };
 
 // export const copyToClipboard = (_item: string) => {

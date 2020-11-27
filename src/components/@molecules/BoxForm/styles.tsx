@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import {COLORS, HP, WP} from 'styles';
 
 import {ButtonCustom, Label} from 'components';
+import {lighten} from 'polished';
 
 export const Form = styled.View`
   width: 100%;
@@ -28,7 +29,7 @@ export const styles = StyleSheet.create({
   box: {
     alignItems: 'center',
     padding: 30,
-    backgroundColor: COLORS.transparentDarkColor,
+    backgroundColor: lighten(0.09, COLORS.transparentDarkColor),
     width: WP('100%'),
   },
   boxInput: {
