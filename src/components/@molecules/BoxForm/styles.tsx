@@ -18,6 +18,7 @@ export const Button = styled(ButtonCustom)`
   border-radius: 5px;
   padding: 20px;
   width: 70%;
+  margin-top: 25px;
 `;
 
 export const Text = styled(Label)`
@@ -29,7 +30,6 @@ export const styles = StyleSheet.create({
   box: {
     alignItems: 'center',
     padding: 30,
-    backgroundColor: lighten(0.09, COLORS.transparentDarkColor),
     width: WP('100%'),
   },
   boxInput: {
