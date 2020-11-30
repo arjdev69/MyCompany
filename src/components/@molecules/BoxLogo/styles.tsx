@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import {Label} from 'components';
 
-import {COLORS, HP, WP} from 'styles';
+import {WP} from 'styles';
 
 export const Title = styled(Label)`
   color: #fff;

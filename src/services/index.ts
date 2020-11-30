@@ -5,8 +5,4 @@ const api = axios.create({
   baseURL: URL.main,
 });
 
-export const server = axios.create({
-  baseURL: URL.server,
-});
-
 export default api;

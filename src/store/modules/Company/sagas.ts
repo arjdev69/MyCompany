@@ -2,29 +2,29 @@ import {Alert} from 'react-native';
 
 import {takeLatest, all, call, put} from 'redux-saga/effects';
 
-import api, {server} from 'services';
+import api from 'services';
 
 import {
   setListCompanys,
- // setDetailPlace,
+  // setDetailPlace,
 } from './actions';
 
-
 export function* getListTasks({payload}) {
+  const {data} = payload;
   try {
+    const resp = yield call(api.get, 'enterprises', {
+      client: data.login.client,
+      uid: data.login.uid,
+      'access-token': data.login.token,
+    });
 
-    const resp = yield call(server.get, 'enterprises');
-
-    console.log(resp)
-
-    //yield put(setListCompanys(resp.data));
+    yield put(setListCompanys(resp.data.enterprises));
   } catch (err) {
     Alert.alert(
       'Falha na requisição',
-      'Houve um erro no retorno dos dados, envie um e-mail'+err,
+      'Houve um erro no retorno dos dados, envie um e-mail' + err,
     );
-
-    console.log(err)
+    console.log(err);
   }
 }
 
