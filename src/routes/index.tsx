@@ -1,50 +1,66 @@
 import * as React from 'react';
-import * as UI from 'react-native';
 
 import {useDispatch} from 'react-redux';
-
 import {signOut} from 'store/modules/auth/actions';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-//import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {LoginView, CompanysView} from 'views';
 
-//import {COLORS, SIZES, HP} from 'styles';
+import {COLORS, HP} from 'styles';
+import {styles} from './styles';
+import {ButtonCustom, Label} from 'components';
 
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
   const dispatch = useDispatch();
 
-  const ListCompany = ({navigation}) => {
-    const press = () => {
-      dispatch(signOut());
-      navigation.push('ListTasks');
-    };
-
-    return (
-      <UI.SafeAreaView>
-        <UI.Button
-          onPress={press}
-          title="EXIT"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      </UI.SafeAreaView>
-    );
+  const press = (nav: string[]) => {
+    dispatch(signOut());
+    nav.push('ListTasks');
   };
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-        initialRouteName="ListTasks">
-        <Stack.Screen name="ListTasks" component={LoginView} />
-        <Stack.Screen name="ListCompanys" component={CompanysView} />
+      <Stack.Navigator initialRouteName="ListTasks">
+        <Stack.Screen
+          name="ListTasks"
+          component={LoginView}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: COLORS.primary,
+              height: 0,
+            },
+            headerLeft: () => <></>,
+          }}
+        />
+        <Stack.Screen
+          name="ListCompanys"
+          component={CompanysView}
+          options={({navigation}) => ({
+            title: '',
+            headerStyle: {
+              backgroundColor: COLORS.primary,
+              height: HP('15%')
+            },
+            headerLeft: () => <></>,
+            headerRight: () => (
+              <ButtonCustom
+                loading={false}
+                style={styles.button}
+                activeOpacity={0.6}
+                onPress={() => {
+                  press(navigation);
+                }}>
+                <Icon name="location-exit" size={25} color="#FFF" />
+              </ButtonCustom>
+            ),
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

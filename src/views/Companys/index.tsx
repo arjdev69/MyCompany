@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import * as UI from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {getListCompanys} from 'store/modules/Company/actions'
-import {signOut} from 'store/modules/auth/actions';
+import {getListCompanys} from 'store/modules/Company/actions';
 
-import { Label } from 'components';
-
+import {Label} from 'components';
 export interface Props {
   navigation: any;
 }
@@ -15,28 +13,15 @@ const Companys: React.FC<Props> = _props => {
   const dispatch = useDispatch();
   const auth = useSelector((state: any) => state.Auth);
 
-  const press = () => {
-    dispatch(signOut());
-    _props.navigation.push('ListTasks');
-  };
-
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(getListCompanys(auth));
-  }, [])
+  }, []);
 
-  return(
-    <>
-    <Label>ADADADADADA</Label>
+  return (
     <UI.SafeAreaView>
-        <UI.Button
-          onPress={press}
-          title="EXIT"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      </UI.SafeAreaView>
-    </>
+      <Label>ADADADADADA</Label>
+    </UI.SafeAreaView>
   );
-}
+};
 
 export default Companys;
