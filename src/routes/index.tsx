@@ -9,7 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
-import {LoginView} from 'views';
+import {LoginView, CompanysView} from 'views';
 
 //import {COLORS, SIZES, HP} from 'styles';
 
@@ -44,7 +44,7 @@ const Routes: React.FC = () => {
         }}
         initialRouteName="ListTasks">
         <Stack.Screen name="ListTasks" component={LoginView} />
-        <Stack.Screen name="ListCompanys" component={ListCompany} />
+        <Stack.Screen name="ListCompanys" component={CompanysView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

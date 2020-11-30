@@ -2,19 +2,21 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
   _id: 0,
-  tasks: [],
-  place: [],
+  data: null,
+  companys: [],
+  company: [],
   loading: false,
 };
 
-export default function Tasks(
+export default function Companys(
   state = INITIAL_STATE,
   action: {
     type: any;
     payload: {
       _id: any;
-      tasks: [];
-      place: [];
+      data: null;
+      companys: [];
+      company: [];
       loading: false;
     };
   },
@@ -23,10 +25,11 @@ export default function Tasks(
     switch (action.type) {
       case '@UPDATE_VALUE/GET_LIST_TASKS': {
         draft.loading = true;
+        draft.data = action.payload.data;
         break;
       }
       case '@UPDATE_VALUE/SET_LIST_TASKS': {
-        draft.tasks = action.payload.tasks;
+        draft.companys = action.payload.companys;
         draft.loading = false;
         break;
       }
@@ -36,7 +39,7 @@ export default function Tasks(
         break;
       }
       case '@UPDATE_VALUE/SET_DETAIL_PLACE': {
-        draft.place = action.payload.place;
+        draft.company = action.payload.company;
         draft.loading = false;
         break;
       }

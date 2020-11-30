@@ -43,6 +43,9 @@ export function setToken({payload}) {
 
   if (login) {
     api.defaults.headers.Authorization = `Bearer ${login.token}`;
+    api.defaults.headers['access-token'] = login.token;
+    api.defaults.headers['uid'] = login.uid;
+    api.defaults.headers['client'] = login.client;
   }
 }
 

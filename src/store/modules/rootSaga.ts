@@ -1,6 +1,6 @@
 import {all} from 'redux-saga/effects';
 
-import tasks from './Places/sagas';
+import tasks from './Company/sagas';
 import auth from './auth/sagas';
 
 export default function* rootSaga() {

@@ -1,24 +1,25 @@
-export function getListTasks() {
+export function getListCompanys(data) {
   return {
     type: '@UPDATE_VALUE/GET_LIST_TASKS',
+    payload: {data},
   };
 }
 
-export function setListTasks(tasks: any) {
+export function setListCompanys(companys: any) {
   return {
     type: '@UPDATE_VALUE/SET_LIST_TASKS',
-    payload: {tasks},
+    payload: {companys},
   };
 }
 
-export function getDetailPlace(_id: any) {
+export function getDetailCompanys(_id: any) {
   return {
     type: '@UPDATE_VALUE/GET_DETAIL_PLACE',
     payload: {_id},
   };
 }
 
-export function setDetailPlace(place: any) {
+export function setDetailCompanys(place: any) {
   return {
     type: '@UPDATE_VALUE/SET_DETAIL_PLACE',
     payload: {place},
