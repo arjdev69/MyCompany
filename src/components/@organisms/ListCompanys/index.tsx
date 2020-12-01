@@ -25,7 +25,9 @@ const ListCompanys: React.FC<Props> = _props => {
         renderItem={({item}) => (
           <ButtonCustom
             key={item.id + 'btn'}
-            onPress={_props.onPress}
+            onPress={() => {
+              _props.onPress(item);
+            }}
             style={{}}
             activeOpacity={0.6}
             loading={false}>
