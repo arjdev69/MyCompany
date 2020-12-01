@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {signOut} from 'store/modules/auth/actions';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,6 +18,8 @@ const Stack = createStackNavigator();
 const Routes: React.FC = () => {
   const dispatch = useDispatch();
 
+  const auth = useSelector((state: any) => state.Auth);
+
   const press = (nav: string[]) => {
     dispatch(signOut());
     nav.push('Login');
@@ -25,7 +27,8 @@ const Routes: React.FC = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator
+        initialRouteName={auth.signed ? 'ListCompanys' : 'Login'}>
         <Stack.Screen
           name="Login"
           component={LoginView}
@@ -67,10 +70,6 @@ const Routes: React.FC = () => {
           component={DetailCompanyView}
           options={({navigation}) => ({
             title: '',
-            headerStyle: {
-              backgroundColor: COLORS.primary,
-              height: HP('15%'),
-            },
           })}
         />
       </Stack.Navigator>

@@ -16,6 +16,7 @@ export function* getListTasks() {
       'Falha na requisição',
       'Houve um erro no retorno dos dados, envie um e-mail' + err,
     );
+    yield put(setListCompanys([]));
     console.log(err);
   }
 }

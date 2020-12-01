@@ -15,6 +15,7 @@ export {
   BoxForm,
   BoxLogo,
   CardItem,
+  Header,
 } from 'components/@molecules';
 
 export {LoginForm, ListCompanys} from 'components/@organisms';
