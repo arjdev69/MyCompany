@@ -4,7 +4,7 @@ import * as UI from 'react-native';
 import {Label, Box} from 'components';
 import {ICON_LOGO} from 'utils/images';
 
-import {styles} from './styles';
+import {styles, Tag} from './styles';
 
 export interface Props {
   title: string;
@@ -25,7 +25,7 @@ const CardItem: React.FC<Props> = _props => {
         loadingIndicatorSource={_props.urlLoad}>
         <Box styles={styles.boxLabels}>
           <Label style={[styles.label, styles.title]}>{_props.title}</Label>
-          <Label style={[styles.label, styles.tag]}>{_props.tag}</Label>
+          <Tag style={[styles.label]}>{_props.tag}</Tag>
         </Box>
       </UI.ImageBackground>
     </Box>

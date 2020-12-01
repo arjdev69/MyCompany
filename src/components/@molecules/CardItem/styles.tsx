@@ -5,9 +5,12 @@ import {Label} from 'components';
 
 import {COLORS, HP, WP} from 'styles';
 
-export const Title = styled(Label)`
+export const Tag = styled(Label)`
   color: #fff;
   margin: 20px;
+  background: ${COLORS.transparentDarkColor};
+  border-radius: 40px;
+  padding: 10px;
 `;
 
 export const styles = StyleSheet.create({
@@ -41,13 +44,6 @@ export const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderRightWidth: 0,
     backgroundColor: COLORS.transparentDarkColor,
-  },
-  tag: {
-    backgroundColor: COLORS.transparentDarkColor,
-    margin: 10,
-    borderRadius: 40,
-    padding: 15,
-    fontSize: 18,
   },
   button: {
     flex: 1,
