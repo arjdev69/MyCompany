@@ -6,18 +6,17 @@ export const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: WP('100%'),
-    height: '100%',
+    alignSelf: 'center',
   },
   image: {
     height: 48,
     width: 48,
-    marginBottom: 5
+    marginBottom: 5,
   },
   headerText: {
     marginBottom: 0,
     padding: 5,
     color: COLORS.lightColor,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
