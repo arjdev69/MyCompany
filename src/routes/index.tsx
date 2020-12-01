@@ -12,6 +12,7 @@ import {LoginView, CompanysView} from 'views';
 import {COLORS, HP} from 'styles';
 import {styles} from './styles';
 import {ButtonCustom, Label} from 'components';
+import {border} from 'polished';
 
 const Stack = createStackNavigator();
 
@@ -45,7 +46,7 @@ const Routes: React.FC = () => {
             title: '',
             headerStyle: {
               backgroundColor: COLORS.primary,
-              height: HP('15%')
+              height: HP('15%'),
             },
             headerLeft: () => <></>,
             headerRight: () => (

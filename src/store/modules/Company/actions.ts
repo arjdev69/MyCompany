@@ -1,4 +1,4 @@
-export function getListCompanys(data) {
+export function getListCompanys(data: any) {
   return {
     type: '@UPDATE_VALUE/GET_LIST_TASKS',
     payload: {data},

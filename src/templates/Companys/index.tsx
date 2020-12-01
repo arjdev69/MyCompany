@@ -1,14 +1,32 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import * as UI from 'react-native';
+import {ListCompanys, Background} from 'components';
 
-// import { Container } from './styles';
-
-const Companys: React.FC = () => {
-  return(
-    <View>
-      <Text>View List Companys</Text>
-    </View>
-  );
+export interface Props {
+  data: any;
+  columns: {
+    image: {
+      name: string;
+      value: string;
+    };
+    title: string;
+    tag: string;
+  };
+  onPress: any;
 }
+
+const Companys: React.FC<Props> = _props => {
+  return (
+    <UI.View style={{height: '100%', width: '100%'}}>
+      <Background>
+        <ListCompanys
+          data={_props.data}
+          columns={_props.columns}
+          onPress={_props.onPress}
+        />
+      </Background>
+    </UI.View>
+  );
+};
 
 export default Companys;
