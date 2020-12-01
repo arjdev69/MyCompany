@@ -7,12 +7,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {LoginView, CompanysView} from 'views';
+import {LoginView, CompanysView, DetailCompanyView} from 'views';
 
 import {COLORS, HP} from 'styles';
 import {styles} from './styles';
-import {ButtonCustom, Label} from 'components';
-import {border} from 'polished';
+import {ButtonCustom} from 'components';
 
 const Stack = createStackNavigator();
 
@@ -21,14 +20,14 @@ const Routes: React.FC = () => {
 
   const press = (nav: string[]) => {
     dispatch(signOut());
-    nav.push('ListTasks');
+    nav.push('Login');
   };
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ListTasks">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
-          name="ListTasks"
+          name="Login"
           component={LoginView}
           options={{
             title: '',
@@ -60,6 +59,18 @@ const Routes: React.FC = () => {
                 <Icon name="location-exit" size={25} color="#FFF" />
               </ButtonCustom>
             ),
+          })}
+        />
+
+        <Stack.Screen
+          name="DetailCompany"
+          component={DetailCompanyView}
+          options={({navigation}) => ({
+            title: '',
+            headerStyle: {
+              backgroundColor: COLORS.primary,
+              height: HP('15%'),
+            },
           })}
         />
       </Stack.Navigator>

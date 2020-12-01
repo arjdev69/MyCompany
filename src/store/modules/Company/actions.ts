@@ -1,27 +1,26 @@
-export function getListCompanys(data: any) {
+export function getListCompanys() {
   return {
-    type: '@UPDATE_VALUE/GET_LIST_TASKS',
-    payload: {data},
+    type: '@UPDATE_VALUE/GET_LIST_COMPANYS',
   };
 }
 
 export function setListCompanys(companys: any) {
   return {
-    type: '@UPDATE_VALUE/SET_LIST_TASKS',
+    type: '@UPDATE_VALUE/SET_LIST_COMPANYS',
     payload: {companys},
   };
 }
 
-export function getDetailCompanys(_id: any) {
+export function getDetailCompany(_id: any) {
   return {
-    type: '@UPDATE_VALUE/GET_DETAIL_PLACE',
+    type: '@UPDATE_VALUE/GET_DETAIL_COMPANY',
     payload: {_id},
   };
 }
 
-export function setDetailCompanys(place: any) {
+export function setDetailCompany(company: any) {
   return {
-    type: '@UPDATE_VALUE/SET_DETAIL_PLACE',
-    payload: {place},
+    type: '@UPDATE_VALUE/SET_DETAIL_COMPANY',
+    payload: {company},
   };
 }

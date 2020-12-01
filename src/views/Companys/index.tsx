@@ -2,28 +2,29 @@ import React, {useEffect, useLayoutEffect} from 'react';
 import * as UI from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {getListCompanys} from 'store/modules/Company/actions';
+import {getListCompanys, getDetailCompany} from 'store/modules/Company/actions';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {Label} from 'components';
+import {URL} from 'utils/Constants';
+
+import {Companys} from 'templates';
+import {Loading} from 'components';
+
 import {COLORS} from 'styles';
 import {styles} from './styles';
-import {Companys} from 'templates';
-import {URL} from 'utils/Constants';
+import * as stylesLogin from '../Login/styles';
 export interface Props {
   navigation: any;
 }
 
 const CompanysView: React.FC<Props> = _props => {
   const dispatch = useDispatch();
-  const auth = useSelector((state: any) => state.Auth);
-  const {companys} = useSelector((state: any) => state.Company);
-
-  const user = auth.user;
+  const {user} = useSelector((state: any) => state.Auth);
+  const companysData = useSelector((state: any) => state.Company);
 
   useEffect(() => {
-    dispatch(getListCompanys(auth));
+    dispatch(getListCompanys());
   }, []);
 
   useLayoutEffect(() => {
@@ -51,13 +52,25 @@ const CompanysView: React.FC<Props> = _props => {
     tag: 'city',
   };
 
-  const detailCompany = () => {
-    console.log('detail company');
+  const detailCompany = (_company: any) => {
+    dispatch(getDetailCompany(_company.id));
+    _props.navigation.navigate('DetailCompany');
   };
 
   return (
     <UI.View>
-      <Companys data={companys} columns={COLUMNS} onPress={detailCompany} />
+      {companysData.loading && (
+        <Loading
+          size={'large'}
+          color={COLORS.nextColor}
+          styles={stylesLogin.styles.loading}
+        />
+      )}
+      <Companys
+        data={companysData.companys}
+        columns={COLUMNS}
+        onPress={detailCompany}
+      />
     </UI.View>
   );
 };

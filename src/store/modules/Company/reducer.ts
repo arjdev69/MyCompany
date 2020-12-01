@@ -21,24 +21,23 @@ export default function Companys(
     };
   },
 ) {
-  return produce(state, (draft) => {
+  return produce(state, draft => {
     switch (action.type) {
-      case '@UPDATE_VALUE/GET_LIST_TASKS': {
+      case '@UPDATE_VALUE/GET_LIST_COMPANYS': {
         draft.loading = true;
-        draft.data = action.payload.data;
         break;
       }
-      case '@UPDATE_VALUE/SET_LIST_TASKS': {
+      case '@UPDATE_VALUE/SET_LIST_COMPANYS': {
         draft.companys = action.payload.companys;
         draft.loading = false;
         break;
       }
-      case '@UPDATE_VALUE/GET_DETAIL_PLACE': {
+      case '@UPDATE_VALUE/GET_DETAIL_COMPANY': {
         draft._id = action.payload._id;
         draft.loading = true;
         break;
       }
-      case '@UPDATE_VALUE/SET_DETAIL_PLACE': {
+      case '@UPDATE_VALUE/SET_DETAIL_COMPANY': {
         draft.company = action.payload.company;
         draft.loading = false;
         break;

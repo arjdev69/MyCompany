@@ -4,19 +4,11 @@ import {takeLatest, all, call, put} from 'redux-saga/effects';
 
 import api from 'services';
 
-import {
-  setListCompanys,
-  // setDetailPlace,
-} from './actions';
+import {setListCompanys, setDetailCompany} from './actions';
 
-export function* getListTasks({payload}) {
-  const {data} = payload;
+export function* getListTasks() {
   try {
-    const resp = yield call(api.get, 'enterprises', {
-      client: data.login.client,
-      uid: data.login.uid,
-      'access-token': data.login.token,
-    });
+    const resp = yield call(api.get, 'enterprises');
 
     yield put(setListCompanys(resp.data.enterprises));
   } catch (err) {
@@ -28,21 +20,21 @@ export function* getListTasks({payload}) {
   }
 }
 
-// export function* getDetailPlace({payload}) {
-//   try {
-//     const resp = yield call(api.get, `places/${payload._id}`);
-
-//     yield put(setDetailPlace(resp.data));
-//   } catch (err) {
-//     yield put(setDetailPlace([]));
-//     Alert.alert(
-//       'Falha na requisição',
-//       'Houve um erro no retorno dos dados, envie um e-mail',
-//     );
-//   }
-// }
+export function* getDetailCompany({payload}) {
+  try {
+    const resp = yield call(api.get, `enterprises/${payload._id}`);
+    //console.log(resp.data);
+    yield put(setDetailCompany(resp.data));
+  } catch (err) {
+    yield put(setDetailCompany([]));
+    Alert.alert(
+      'Falha na requisição',
+      'Houve um erro no retorno dos dados, envie um e-mail',
+    );
+  }
+}
 
 export default all([
-  takeLatest('@UPDATE_VALUE/GET_LIST_TASKS', getListTasks),
-  // takeLatest('@UPDATE_VALUE/GET_DETAIL_PLACE', getDetailPlace),
+  takeLatest('@UPDATE_VALUE/GET_LIST_COMPANYS', getListTasks),
+  takeLatest('@UPDATE_VALUE/GET_DETAIL_COMPANY', getDetailCompany),
 ]);
