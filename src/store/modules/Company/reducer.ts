@@ -6,6 +6,10 @@ const INITIAL_STATE = {
   companys: [],
   company: [],
   loading: false,
+  filter: {
+    name: '',
+    types: 0,
+  },
 };
 
 export default function Companys(
@@ -18,12 +22,17 @@ export default function Companys(
       companys: [];
       company: [];
       loading: false;
+      filter: {
+        name: string;
+        types: number;
+      };
     };
   },
 ) {
   return produce(state, draft => {
     switch (action.type) {
       case '@UPDATE_VALUE/GET_LIST_COMPANYS': {
+        draft.filter = action.payload.filter;
         draft.loading = true;
         break;
       }

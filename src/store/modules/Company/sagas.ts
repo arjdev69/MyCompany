@@ -6,9 +6,15 @@ import api from 'services';
 
 import {setListCompanys, setDetailCompany} from './actions';
 
-export function* getListTasks() {
+export function* getListTasks({payload}) {
+  console.log(payload.filter);
   try {
-    const resp = yield call(api.get, 'enterprises');
+    const resp = yield call(api.get, 'enterprises', {
+      params: {
+        name: payload.filter.name,
+        enterprise_types: payload.filter.types,
+      },
+    });
 
     yield put(setListCompanys(resp.data.enterprises));
   } catch (err) {

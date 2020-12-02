@@ -1,6 +1,7 @@
-export function getListCompanys() {
+export function getListCompanys(filter: {}) {
   return {
     type: '@UPDATE_VALUE/GET_LIST_COMPANYS',
+    payload: {filter},
   };
 }
 
