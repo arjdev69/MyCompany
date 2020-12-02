@@ -16,8 +16,7 @@ export {
   BoxLogo,
   CardItem,
   Header,
+  BoxText,
 } from 'components/@molecules';
 
-export {LoginForm, ListCompanys} from 'components/@organisms';
-
-//export {default as Admob} from './Admob';
+export {LoginForm, ListCompanys, DetailItem} from 'components/@organisms';

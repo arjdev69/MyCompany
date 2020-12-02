@@ -4,3 +4,4 @@ export {default as BoxForm} from './BoxForm';
 export {default as BoxLogo} from './BoxLogo';
 export {default as CardItem} from './CardItem';
 export {default as Header} from './Header';
+export {default as BoxText} from './BoxText';

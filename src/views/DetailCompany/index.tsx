@@ -6,6 +6,8 @@ import {useSelector} from 'react-redux';
 import {URL} from 'utils/Constants';
 import * as Helpers from 'utils';
 
+import {DetailCompany} from 'templates';
+
 import {Loading, NotFound, Header, Label} from 'components';
 
 import {COLORS} from 'styles';
@@ -16,7 +18,7 @@ export interface Props {
   navigation: any;
 }
 
-const DetailCompany: React.FC<Props> = _props => {
+const DetailCompanyView: React.FC<Props> = _props => {
   const {
     company: {enterprise},
     loading,
@@ -58,6 +60,10 @@ const DetailCompany: React.FC<Props> = _props => {
     }
   }, [_props.navigation, enterprise]);
 
+  const COLUMNS = {
+    description: 'description',
+  };
+
   return (
     <UI.View>
       {loading && (
@@ -68,7 +74,7 @@ const DetailCompany: React.FC<Props> = _props => {
         />
       )}
       {enterprise ? (
-        <UI.Text>{enterprise.city}</UI.Text>
+        <DetailCompany data={enterprise} columns={COLUMNS} />
       ) : (
         <NotFound message="Nenhum resultado encontrado..." />
       )}
@@ -76,4 +82,4 @@ const DetailCompany: React.FC<Props> = _props => {
   );
 };
 
-export default DetailCompany;
+export default DetailCompanyView;
