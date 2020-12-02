@@ -3,7 +3,6 @@
 
 ### Libs
 
-* react-native-community/async-storage
 * react-navigation/native
 * react-native-linear-gradient 
 * react-native-responsive-screen
