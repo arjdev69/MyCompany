@@ -42,13 +42,12 @@ const BoxForm: React.FC<Props> = _props => {
   };
 
   return (
-    <UI.KeyboardAvoidingView
-      behavior={'padding'}>
+    <UI.KeyboardAvoidingView behavior={'padding'}>
       <Box styles={styles.box}>
         <Form>
           <Input
             icon="mail-outline"
-            color={emailError ? COLORS.errorColor : COLORS.lightColor}
+            colorIcon={emailError ? COLORS.errorColor : COLORS.lightColor}
             styleBox={[styles.boxInput, emailError && styles.error]}
             style={[styles.input, emailError && styles.error]}
             placeholderTextColor={
@@ -64,7 +63,7 @@ const BoxForm: React.FC<Props> = _props => {
           />
           <Input
             icon="lock-outline"
-            color={passwordError ? COLORS.errorColor : COLORS.lightColor}
+            colorIcon={passwordError ? COLORS.errorColor : COLORS.lightColor}
             styleBox={[styles.boxInput, passwordError && styles.error]}
             style={[styles.input, passwordError && styles.error]}
             placeholderTextColor={
@@ -83,7 +82,9 @@ const BoxForm: React.FC<Props> = _props => {
           activeOpacity={0.6}
           onPress={sendInfoServer}
           style={{}}>
-          <Text style={{}}>Sign In</Text>
+          <Text icon={false} viewStyle={{}} style={{}}>
+            Sign In
+          </Text>
         </Button>
       </Box>
     </UI.KeyboardAvoidingView>

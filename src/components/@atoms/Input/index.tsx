@@ -7,14 +7,16 @@ import {View, TextInput} from 'react-native';
 export interface Props {
   styleBox: {};
   style: {};
-  color: String;
-  icon: String;
+  colorIcon: string | any;
+  icon: string | any;
 }
 
 const Input: React.FC<Props> = props => {
   return (
     <View style={props.styleBox}>
-      {props.icon && <Icon name={props.icon} size={30} color={props.color} />}
+      {props.icon && (
+        <Icon name={props.icon} size={30} color={props.colorIcon} />
+      )}
       <TextInput {...props} />
     </View>
   );

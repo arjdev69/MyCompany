@@ -4,7 +4,7 @@ import * as UI from 'react-native';
 
 export interface Props {
   children: any;
-  loading: false;
+  loading: boolean;
   onPress: any;
   style: {};
   activeOpacity: number;

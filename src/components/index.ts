@@ -17,6 +17,12 @@ export {
   CardItem,
   Header,
   BoxText,
+  SearchItem,
 } from 'components/@molecules';
 
-export {LoginForm, ListCompanys, DetailItem} from 'components/@organisms';
+export {
+  LoginForm,
+  ListCompanys,
+  DetailItem,
+  Search,
+} from 'components/@organisms';

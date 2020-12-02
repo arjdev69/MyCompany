@@ -1,5 +1,8 @@
 import React from 'react';
 import * as UI from 'react-native';
+
+import {useSelector} from 'react-redux';
+
 import {Box, ButtonCustom, CardItem} from 'components';
 
 export interface Props {
@@ -13,14 +16,21 @@ export interface Props {
     };
   };
   onPress: any;
+  fetch: any;
 }
 
 const ListCompanys: React.FC<Props> = _props => {
   const {image} = _props.columns;
+  const {filter} = useSelector((state: any) => state.Company);
 
   return (
-    <Box styles={{}}>
+    <Box styles={{flex: 1}}>
       <UI.FlatList
+        onEndReached={() => {
+          _props.fetch({...filter});
+        }}
+        removeClippedSubviews={true}
+        onEndReachedThreshold={0.1}
         data={_props.data}
         renderItem={({item}) => (
           <ButtonCustom

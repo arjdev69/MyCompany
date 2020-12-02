@@ -23,10 +23,6 @@ const CompanysView: React.FC<Props> = _props => {
   const {user} = useSelector((state: any) => state.Auth);
   const companysData = useSelector((state: any) => state.Company);
 
-  useEffect(() => {
-    dispatch(getListCompanys());
-  }, []);
-
   useLayoutEffect(() => {
     if (user) {
       _props.navigation.setOptions({
@@ -57,6 +53,14 @@ const CompanysView: React.FC<Props> = _props => {
     _props.navigation.navigate('DetailCompany');
   };
 
+  const fetchApi = (filter: {}) => {
+    dispatch(getListCompanys(filter));
+  };
+
+  useEffect(() => {
+    fetchApi({});
+  }, []);
+
   return (
     <UI.View>
       {companysData.loading && (
@@ -70,6 +74,7 @@ const CompanysView: React.FC<Props> = _props => {
         data={companysData.companys}
         columns={COLUMNS}
         onPress={detailCompany}
+        fetch={fetchApi}
       />
     </UI.View>
   );
