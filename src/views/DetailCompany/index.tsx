@@ -4,8 +4,9 @@ import * as UI from 'react-native';
 import {useSelector} from 'react-redux';
 
 import {URL} from 'utils/Constants';
+import * as Helpers from 'utils';
 
-import {Loading, NotFound, Header} from 'components';
+import {Loading, NotFound, Header, Label} from 'components';
 
 import {COLORS} from 'styles';
 
@@ -30,8 +31,28 @@ const DetailCompany: React.FC<Props> = _props => {
             url={{uri: URL.server + enterprise.photo}}
             styles={{}}
             title={enterprise.enterprise_name}
-            titleStyles={styles.headerTitle}
-          />
+            titleStyles={styles.headerTitle}>
+            <UI.View style={styles.boxLabels}>
+              <Label
+                icon="attach-money"
+                style={styles.text}
+                viewStyle={styles.viewLabel}>
+                {Helpers.convertMoney(enterprise.share_price)}
+              </Label>
+              <Label
+                icon="location-searching"
+                style={styles.text}
+                viewStyle={styles.viewLabel}>
+                {enterprise.country}
+              </Label>
+              <Label
+                icon="location-city"
+                style={styles.text}
+                viewStyle={styles.viewLabel}>
+                {enterprise.city}
+              </Label>
+            </UI.View>
+          </Header>
         ),
       });
     }

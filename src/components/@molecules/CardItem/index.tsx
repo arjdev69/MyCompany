@@ -24,8 +24,15 @@ const CardItem: React.FC<Props> = _props => {
         progressiveRenderingEnabled={true}
         loadingIndicatorSource={_props.urlLoad}>
         <Box styles={styles.boxLabels}>
-          <Label style={[styles.label, styles.title]}>{_props.title}</Label>
-          <Tag style={[styles.label]}>{_props.tag}</Tag>
+          <Label
+            viewStyle={{flex: 1, width: '100%'}}
+            icon={false}
+            style={[styles.label, styles.title]}>
+            {_props.title}
+          </Label>
+          <Tag viewStyle={{}} icon={false} style={[styles.label]}>
+            {_props.tag}
+          </Tag>
         </Box>
       </UI.ImageBackground>
     </Box>

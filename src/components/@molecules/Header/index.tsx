@@ -25,28 +25,30 @@ const Header: React.FC<Props> = _props => {
     <>
       {visible && (
         <UI.SafeAreaView style={[styles.header, _props.styles]}>
-          <ButtonCustom
-            loading={false}
-            activeOpacity={0.3}
-            style={styles.btnBack}
-            onPress={() => {
-              setVisible(!visible);
-              _props.navigation.dispatch(CommonActions.goBack());
-            }}>
-            <Icons
-              name="md-chevron-back-circle"
-              size={30}
-              color={COLORS.lightColor}
-            />
-          </ButtonCustom>
-          <UI.View style={[styles.headerTitle, _props.titleStyles]}>
-            <ImageLoad
-              key={'image'}
-              styles={styles.image}
-              url={_props.url}
-              urlLoad={ICON_LOGO}
-            />
-            <UI.Text style={styles.headerText}>{_props.title}</UI.Text>
+          <UI.View style={styles.headerContent}>
+            <ButtonCustom
+              loading={false}
+              activeOpacity={0.3}
+              style={styles.btnBack}
+              onPress={() => {
+                setVisible(!visible);
+                _props.navigation.dispatch(CommonActions.goBack());
+              }}>
+              <Icons
+                name="md-chevron-back-circle"
+                size={30}
+                color={COLORS.lightColor}
+              />
+            </ButtonCustom>
+            <UI.View style={[styles.headerTitle, _props.titleStyles]}>
+              <ImageLoad
+                key={'image'}
+                styles={styles.image}
+                url={_props.url}
+                urlLoad={ICON_LOGO}
+              />
+              <UI.Text style={styles.headerText}>{_props.title}</UI.Text>
+            </UI.View>
           </UI.View>
           {_props.children}
         </UI.SafeAreaView>

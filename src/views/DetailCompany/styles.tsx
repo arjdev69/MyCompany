@@ -13,4 +13,23 @@ export const styles = StyleSheet.create({
     paddingTop: 15,
     marginLeft: -30,
   },
+  boxLabels: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  viewLabel: {
+    width: '30%',
+    borderRadius: 10,
+    backgroundColor: COLORS.transparentDarkColor,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+  },
+  text: {
+    color: COLORS.lightColor,
+    fontWeight: 'bold',
+  },
 });

@@ -2,17 +2,21 @@ import {StyleSheet} from 'react-native';
 
 import styled from 'styled-components/native';
 
-import {COLORS, HP} from 'styles';
+import {COLORS, HP, WP} from 'styles';
 
 export const Container = styled.View``;
 
 export const styles = StyleSheet.create({
   header: {
-    height: HP('25%'),
+    height: HP('30%'),
     backgroundColor: COLORS.primary,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   headerTitle: {
     flex: 8,
@@ -24,8 +28,10 @@ export const styles = StyleSheet.create({
   },
   image: {
     padding: 40,
+    width: WP('20%'),
     borderRadius: 40,
     marginBottom: 10,
+    resizeMode: 'cover',
   },
   headerText: {
     color: COLORS.lightColor,
