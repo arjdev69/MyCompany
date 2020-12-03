@@ -18,6 +18,8 @@ export {
   Header,
   BoxText,
   SearchItem,
+  Options,
+  ItemClick,
 } from 'components/@molecules';
 
 export {

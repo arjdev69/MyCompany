@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Box, Input, ButtonCustom, Label} from 'components';
+import {Box, Input, ButtonCustom} from 'components';
 
 import {styles} from './styles';
 

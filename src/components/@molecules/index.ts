@@ -6,3 +6,5 @@ export {default as CardItem} from './CardItem';
 export {default as Header} from './Header';
 export {default as BoxText} from './BoxText';
 export {default as SearchItem} from './SearchItem';
+export {default as Options} from './Options';
+export {default as ItemClick} from './ItemClick';
