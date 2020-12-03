@@ -7,7 +7,6 @@ import api from 'services';
 import {setListCompanys, setDetailCompany} from './actions';
 
 export function* getListTasks({payload}) {
-  console.log(payload.filter);
   try {
     const resp = yield call(api.get, 'enterprises', {
       params: {
@@ -23,14 +22,12 @@ export function* getListTasks({payload}) {
       'Houve um erro no retorno dos dados, envie um e-mail' + err,
     );
     yield put(setListCompanys([]));
-    console.log(err);
   }
 }
 
 export function* getDetailCompany({payload}) {
   try {
     const resp = yield call(api.get, `enterprises/${payload._id}`);
-    //console.log(resp.data);
     yield put(setDetailCompany(resp.data));
   } catch (err) {
     yield put(setDetailCompany([]));

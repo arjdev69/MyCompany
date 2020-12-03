@@ -20,13 +20,18 @@ export function* signIn({payload}) {
       client: response.headers.client,
     };
 
-    api.defaults.headers.Authorization = `Bearer ${login.token}`;
+    if (login) {
+      api.defaults.headers.Authorization = `Bearer ${login.token}`;
+      api.defaults.headers['access-token'] = login.token;
+      api.defaults.headers['uid'] = login.uid;
+      api.defaults.headers['client'] = login.client;
+    }
 
     yield put(signInSuccess(login, response.data));
   } catch (err) {
     Alert.alert(
       'Falha na autenticação',
-      'Houve um erro no login, verifique seus dados',
+      'Houve um erro no login, verifique seus dados: ' + err,
     );
     yield put(signFailure());
   }
