@@ -30,7 +30,7 @@ const Options: React.FC<Props> = _props => {
       <ModalComp
         name={'options'}
         icon={ICON_NONE}
-        stylesModal={{}}
+        stylesModal={styles.viewModal}
         stylesIcon={{}}
         animationType="fade"
         transparent={true}
@@ -39,23 +39,23 @@ const Options: React.FC<Props> = _props => {
         <ItemClick
           key={'_idx'}
           styles={{}}
-          stylesBtn={{}}
+          stylesBtn={styles.btnClearFilter}
           stylesLabel={{}}
-          label={'X'}
+          label={'Limpar Filtro'}
           children={false}
           fnCallback={() => {
             _props.press(null);
             setModalVisible(false);
           }}
         />
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {_props.items.map(
             (_item: any, _idx: string | number | null | undefined) => (
               <ItemClick
                 key={_idx}
-                styles={{}}
-                stylesBtn={{}}
-                stylesLabel={{}}
+                styles={styles.boxButton}
+                stylesBtn={styles.buttonItem}
+                stylesLabel={styles.label}
                 label={_item[_props.itemsColumns.label]}
                 children={false}
                 fnCallback={() => {

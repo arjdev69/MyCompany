@@ -14,7 +14,7 @@ export interface Props {
   children: any;
 }
 
-const ItemClick: React.FC<Props> = (_props) => {
+const ItemClick: React.FC<Props> = _props => {
   return (
     <Box styles={[styles.boxListItem, _props.styles]}>
       {_props.children ? (

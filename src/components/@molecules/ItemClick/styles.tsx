@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
     borderColor: lighten(0.1, COLORS.darkColor),
   },
   labelBtn: {
-    flex: 0,
     fontSize: 25,
     textAlign: 'center',
     color: COLORS.primary,
