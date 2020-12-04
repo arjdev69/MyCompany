@@ -8,6 +8,7 @@ export const Container = styled.View``;
 
 export const styles = UI.StyleSheet.create({
   box: {
+    flex: 1,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -17,7 +18,6 @@ export const styles = UI.StyleSheet.create({
   },
   viewSearch: {
     flex: 1,
-    padding: 15,
   },
   label: {
     color: COLORS.lightColor,

@@ -10,6 +10,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {ButtonCustom, Box, ModalComp, ItemClick} from 'components';
+import {styles} from './styles';
 
 export interface Props {
   items: {}[];
@@ -67,13 +68,13 @@ const Options: React.FC<Props> = _props => {
         </ScrollView>
       </ModalComp>
       <ButtonCustom
-        style={{}}
+        style={styles.button}
         activeOpacity={0.6}
         loading={false}
         onPress={() => {
           setModalVisible(true);
         }}>
-        <Icon name="filter" size={30} color="#FFF" />
+        <Icon name="options" size={30} color="#FFF" />
       </ButtonCustom>
     </Box>
   );

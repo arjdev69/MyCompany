@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect} from 'react';
 import * as UI from 'react-native';
 
 import {useSelector} from 'react-redux';
@@ -24,7 +24,7 @@ const DetailCompanyView: React.FC<Props> = _props => {
     loading,
   } = useSelector((state: any) => state.Company);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (enterprise) {
       _props.navigation.setOptions({
         header: () => (

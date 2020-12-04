@@ -2,8 +2,11 @@ import React from 'react';
 
 import {useSelector} from 'react-redux';
 
-import {Box, SearchItem, Options} from 'components';
 import {ENTERPRISE_TYPES} from 'utils/Constants';
+
+import {SearchItem, Options} from 'components';
+
+import {Container} from './styles';
 
 export interface Props {
   fetch: any;
@@ -26,14 +29,14 @@ const Search: React.FC<Props> = _props => {
   };
 
   return (
-    <Box styles={{}}>
-      <SearchItem fetch={fetchApi} />
+    <Container>
       <Options
         items={ENTERPRISE_TYPES}
         itemsColumns={ITEMS_COLUMNS}
         press={fetchApiOptions}
       />
-    </Box>
+      <SearchItem fetch={fetchApi} />
+    </Container>
   );
 };
 

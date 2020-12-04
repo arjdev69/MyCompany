@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import * as UI from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
@@ -20,6 +20,7 @@ export interface Props {
 
 const CompanysView: React.FC<Props> = _props => {
   const dispatch = useDispatch();
+  const [load, setLoad] = useState(false);
   const {user} = useSelector((state: any) => state.Auth);
   const companysData = useSelector((state: any) => state.Company);
 
@@ -49,8 +50,12 @@ const CompanysView: React.FC<Props> = _props => {
   };
 
   const detailCompany = (_company: any) => {
-    dispatch(getDetailCompany(_company.id));
-    _props.navigation.navigate('DetailCompany');
+    setLoad(true);
+    setTimeout(() => {
+      dispatch(getDetailCompany(_company.id));
+      _props.navigation.navigate('DetailCompany');
+      setLoad(false);
+    }, 1000);
   };
 
   const fetchApi = (filter: {}) => {
@@ -63,7 +68,7 @@ const CompanysView: React.FC<Props> = _props => {
 
   return (
     <UI.View>
-      {companysData.loading && (
+      {(companysData.loading || load) && (
         <Loading
           size={'large'}
           color={COLORS.nextColor}
